@@ -1,0 +1,26 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es2021": true
+  },
+  "extends": ["airbnb", "prettier"],
+  "parserOptions": {
+    "ecmaVersion": "latest"
+  },
+  "plugins": ["prettier"],
+  "rules": {
+    "global-require": "off",
+    "import/no-extraneous-dependencies": "off",
+    "import/prefer-default-export": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "no-console": "warn",
+    "no-empty": "off",
+    "no-param-reassign": "off",
+    "no-underscore-dangle": "off",
+    "no-useless-escape": "off",
+    "no-use-before-define": "off",
+    "prefer-template": "off",
+    "prettier/prettier": "error"
+  }
+}

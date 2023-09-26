@@ -1,0 +1,10 @@
+/node_modules
+/.vscode
+/*.sqlite
+
+# env
+.env*
+!.env.example
+
+# macOS
+.DS_Store
