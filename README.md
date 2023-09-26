@@ -40,7 +40,7 @@ Before you begin, ensure you have met the following requirements:
 
    ```
 
-4. Rename .env.example to .env and update the environment variables with your configuration.
+4. Rename `.env.example` to `.env` and update the environment variables with your configuration.
 
 5. Start the server:
 
@@ -56,22 +56,22 @@ After installing and starting the server, your API should be up and running. You
 
 The following endpoints are available:
 
-`GET /users`: Retrieve a list of all users.
-`POST /users`: Create a new user.
-`GET /users/:id`: Retrieve a specific user by its ID.
-`PUT /users/:id`: Update a specific user by its ID.
+`GET /users`: Retrieve a list of all users.\
+`POST /users`: Create a new user.\
+`GET /users/:id`: Retrieve a specific user by its ID.\
+`PUT /users/:id`: Update a specific user by its ID.\
 `DELETE /users/:id`: Delete a specific user by its ID.
 
-`GET /roles`: Retrieve a list of all roles.
-`POST /roles`: Create a new role.
-`GET /roles/:id`: Retrieve a specific role by its ID.
-`PUT /roles/:id`: Update a specific role by its ID.
+`GET /roles`: Retrieve a list of all roles.\
+`POST /roles`: Create a new role.\
+`GET /roles/:id`: Retrieve a specific role by its ID.\
+`PUT /roles/:id`: Update a specific role by its ID.\
 `DELETE /roles/:id`: Delete a specific role by its ID.
 
-`GET /permissions`: Retrieve a list of all permissions.
-`POST /permissions`: Create a new permission.
-`GET /permissions/:id`: Retrieve a specific permission by its ID.
-`PUT /permissions/:id`: Update a specific permission by its ID.
+`GET /permissions`: Retrieve a list of all permissions.\
+`POST /permissions`: Create a new permission.\
+`GET /permissions/:id`: Retrieve a specific permission by its ID.\
+`PUT /permissions/:id`: Update a specific permission by its ID.\
 `DELETE /permissions/:id`: Delete a specific permission by its ID.
 
 ## Contributing
@@ -86,4 +86,4 @@ Contributions are welcome! If you'd like to contribute to this project, please f
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](https://github.com/isaiac/node-rest-api/blob/main/LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/isaiac/node-rest-api/blob/main/LICENSE/) file for details.
