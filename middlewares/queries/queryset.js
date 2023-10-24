@@ -49,7 +49,7 @@ const transformValue = (value, operator) => {
       }
 
       if (['0', 'false', 'no'].includes(value)) {
-        return true;
+        return false;
       }
 
       return null;
