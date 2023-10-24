@@ -7,6 +7,7 @@ const MESSAGES = {
   exists: 'The {{field}} field is required.',
   existsIn: 'The {{field}} value is invalid.',
   isArray: 'The {{field}} field must be a valid array.',
+  isBoolean: 'The {{field}} field must be true or false.',
   isEmail: 'The {{field}} field must be a valid email address.',
   isIn: 'The {{field}} field must be one of the folliwing values: [{{isIn}}].',
   isLength:
