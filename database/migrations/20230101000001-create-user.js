@@ -1,5 +1,3 @@
-const UserStatus = require('../../enums/user-status');
-
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
@@ -26,9 +24,9 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
-      status: {
-        type: Sequelize.ENUM(UserStatus.ACTIVE, UserStatus.INACTIVE),
-        defaultValue: UserStatus.ACTIVE
+      is_active: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: true
       },
       email_verified_at: {
         type: Sequelize.DATE

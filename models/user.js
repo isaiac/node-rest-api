@@ -3,8 +3,6 @@ const { DataTypes, Op } = require('sequelize');
 
 const sequelize = require('../config/database');
 
-const UserStatus = require('../enums/user-status');
-
 const Model = require('./model');
 const PermissionUser = require('./permission-user');
 const RoleUser = require('./role-user');
@@ -50,14 +48,6 @@ class User extends Model {
     return !!(await User.count({
       where: { username, id: { [Op[id ? 'ne' : 'not']]: id } }
     }));
-  }
-
-  isActive() {
-    return this.status === UserStatus.ACTIVE;
-  }
-
-  isInactive() {
-    return this.status === UserStatus.INACTIVE;
   }
 
   isVerified() {
@@ -160,9 +150,9 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false
     },
-    status: {
-      type: DataTypes.ENUM(UserStatus.ACTIVE, UserStatus.INACTIVE),
-      defaultValue: UserStatus.ACTIVE
+    is_active: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: true
     },
     email_verified_at: {
       type: DataTypes.DATE
@@ -200,12 +190,16 @@ User.init(
     scopes: {
       active: {
         where: {
-          status: UserStatus.ACTIVE
+          is_active: {
+            [Op.is]: true
+          }
         }
       },
       inactive: {
         where: {
-          status: UserStatus.INACTIVE
+          is_active: {
+            [Op.not]: true
+          }
         }
       },
       verified: {

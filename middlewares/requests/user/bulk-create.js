@@ -1,7 +1,5 @@
 const validateRequest = require('../request');
 
-const UserStatus = require('../../../enums/user-status');
-
 const Permission = require('../../../models/permission');
 const Role = require('../../../models/role');
 const User = require('../../../models/user');
@@ -74,11 +72,9 @@ module.exports = async (req, res, next) => {
         }
       }
     },
-    'data.*.status': {
+    'data.*.is_active': {
       optional: true,
-      isIn: {
-        options: [[UserStatus.ACTIVE, UserStatus.INACTIVE]]
-      }
+      isBoolean: true
     },
 
     'data.*.roles': {

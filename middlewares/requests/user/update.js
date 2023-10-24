@@ -1,7 +1,5 @@
 const validateRequest = require('../request');
 
-const UserStatus = require('../../../enums/user-status');
-
 const Permission = require('../../../models/permission');
 const Role = require('../../../models/role');
 const User = require('../../../models/user');
@@ -14,7 +12,7 @@ const REQUEST_FIELDS = [
   'username',
   'password',
   'password_confirmation',
-  'status',
+  'is_active',
   'roles',
   'permissions'
 ];
@@ -77,11 +75,9 @@ module.exports = async (req, res, next) => {
         custom: (value, { req: request }) => value === request.body.password
       }
     },
-    status: {
+    is_active: {
       optional: true,
-      isIn: {
-        options: [[UserStatus.ACTIVE, UserStatus.INACTIVE]]
-      }
+      isBoolean: true
     },
 
     roles: {

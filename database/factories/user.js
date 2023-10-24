@@ -1,8 +1,6 @@
 const { faker } = require('@faker-js/faker');
 const { factory } = require('factory-girl');
 
-const UserStatus = require('../../enums/user-status');
-
 const User = require('../../models/user');
 
 factory.define('user', User, {
@@ -11,7 +9,7 @@ factory.define('user', User, {
   email: () => faker.internet.email(),
   username: () => faker.internet.userName(),
   password: () => faker.internet.password({ length: 10 }),
-  status: UserStatus.ACTIVE,
+  is_active: true,
   email_verified_at: () => new Date(),
   created_at: () => new Date(),
   updated_at: () => new Date()

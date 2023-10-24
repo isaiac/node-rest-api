@@ -43,7 +43,7 @@ describe('Users', () => {
           username: 'test',
           password: 'changeme.123',
           password_confirmation: 'changeme.123',
-          status: 'active',
+          is_active: true,
           roles: ['admin'],
           permissions: ['add-users', 'edit-users', 'delete-users']
         };
@@ -69,21 +69,19 @@ describe('Users', () => {
       User.findByEmail('admin@example.com').then((user) => {
         const accessToken = generateAccessToken(user.id);
 
-        User.findByEmail('admin@example.com').then(
-          ({ id: userId }) => {
-            chai
-              .request(server)
-              .get(`/users/${userId}`)
-              .set('Authorization', `Bearer ${accessToken}`)
-              .end((_, res) => {
-                chai.expect(res).to.have.status(StatusCodes.OK);
-                chai.expect(res.body).to.be.a('object');
-                chai.expect(res.body).to.have.property('id');
+        User.findByEmail('admin@example.com').then(({ id: userId }) => {
+          chai
+            .request(server)
+            .get(`/users/${userId}`)
+            .set('Authorization', `Bearer ${accessToken}`)
+            .end((_, res) => {
+              chai.expect(res).to.have.status(StatusCodes.OK);
+              chai.expect(res.body).to.be.a('object');
+              chai.expect(res.body).to.have.property('id');
 
-                done();
-              });
-          }
-        );
+              done();
+            });
+        });
       });
     });
   });
@@ -93,33 +91,31 @@ describe('Users', () => {
       User.findByEmail('admin@example.com').then((user) => {
         const accessToken = generateAccessToken(user.id);
 
-        User.findByEmail('test@example.com').then(
-          ({ id: userId }) => {
-            const data = {
-              name: 'Test',
-              email: 'test@example.com',
-              username: 'test',
-              password: 'changeme.123',
-              password_confirmation: 'changeme.123',
-              status: 'active',
-              roles: ['admin'],
-              permissions: ['add-users', 'edit-users', 'delete-users']
-            };
+        User.findByEmail('test@example.com').then(({ id: userId }) => {
+          const data = {
+            name: 'Test',
+            email: 'test@example.com',
+            username: 'test',
+            password: 'changeme.123',
+            password_confirmation: 'changeme.123',
+            is_active: true,
+            roles: ['admin'],
+            permissions: ['add-users', 'edit-users', 'delete-users']
+          };
 
-            chai
-              .request(server)
-              .put(`/users/${userId}`)
-              .set('Authorization', `Bearer ${accessToken}`)
-              .send(data)
-              .end((_, res) => {
-                chai.expect(res).to.have.status(StatusCodes.OK);
-                chai.expect(res.body).to.be.a('object');
-                chai.expect(res.body).to.have.property('id');
+          chai
+            .request(server)
+            .put(`/users/${userId}`)
+            .set('Authorization', `Bearer ${accessToken}`)
+            .send(data)
+            .end((_, res) => {
+              chai.expect(res).to.have.status(StatusCodes.OK);
+              chai.expect(res.body).to.be.a('object');
+              chai.expect(res.body).to.have.property('id');
 
-                done();
-              });
-          }
-        );
+              done();
+            });
+        });
       });
     });
   });
@@ -129,19 +125,17 @@ describe('Users', () => {
       User.findByEmail('admin@example.com').then((user) => {
         const accessToken = generateAccessToken(user.id);
 
-        User.findByEmail('test@example.com').then(
-          ({ id: userId }) => {
-            chai
-              .request(server)
-              .delete(`/users/${userId}`)
-              .set('Authorization', `Bearer ${accessToken}`)
-              .end((_, res) => {
-                chai.expect(res).to.have.status(StatusCodes.NO_CONTENT);
+        User.findByEmail('test@example.com').then(({ id: userId }) => {
+          chai
+            .request(server)
+            .delete(`/users/${userId}`)
+            .set('Authorization', `Bearer ${accessToken}`)
+            .end((_, res) => {
+              chai.expect(res).to.have.status(StatusCodes.NO_CONTENT);
 
-                done();
-              });
-          }
-        );
+              done();
+            });
+        });
       });
     });
   });
