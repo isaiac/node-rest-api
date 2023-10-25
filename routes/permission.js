@@ -69,7 +69,7 @@ router.delete(
 router.get(
   '/',
   isAuth,
-  hasAbilities('admin'),
+  hasAbilities('admin', 'view-permissions'),
   queryset,
   permissionController.list
 );
@@ -85,7 +85,7 @@ router.post(
 router.get(
   '/:permission',
   isAuth,
-  hasAbilities('admin'),
+  hasAbilities('admin', 'view-permissions'),
   findOrFail('permission'),
   permissionController.fetch
 );

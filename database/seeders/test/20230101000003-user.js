@@ -16,9 +16,11 @@ module.exports = {
           'add-users',
           'edit-users',
           'delete-users',
+          'view-roles',
           'add-roles',
           'edit-roles',
           'delete-roles',
+          'view-permissions',
           'add-permissions',
           'edit-permissions',
           'delete-permissions'

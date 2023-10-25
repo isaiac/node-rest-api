@@ -28,6 +28,11 @@ module.exports = {
         updated_at: date
       },
       {
+        name: 'View Roles',
+        created_at: date,
+        updated_at: date
+      },
+      {
         name: 'Add Roles',
         created_at: date,
         updated_at: date
@@ -39,6 +44,11 @@ module.exports = {
       },
       {
         name: 'Delete Roles',
+        created_at: date,
+        updated_at: date
+      },
+      {
+        name: 'View Permissions',
         created_at: date,
         updated_at: date
       },

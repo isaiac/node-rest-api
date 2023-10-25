@@ -9,9 +9,11 @@ module.exports = {
       { name: 'Add Users' },
       { name: 'Edit Users' },
       { name: 'Delete Users' },
+      { name: 'View Roles' },
       { name: 'Add Roles' },
       { name: 'Edit Roles' },
       { name: 'Delete Roles' },
+      { name: 'View Permissions' },
       { name: 'Add Permissions' },
       { name: 'Edit Permissions' },
       { name: 'Delete Permissions' }

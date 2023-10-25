@@ -66,7 +66,12 @@ router.delete(
   roleController.bulkDestroy
 );
 
-router.get('/', isAuth, hasAbilities('admin'), roleController.list);
+router.get(
+  '/',
+  isAuth,
+  hasAbilities('admin', 'view-roles'),
+  roleController.list
+);
 
 router.post(
   '/',
@@ -79,7 +84,7 @@ router.post(
 router.get(
   '/:role',
   isAuth,
-  hasAbilities('admin'),
+  hasAbilities('admin', 'view-roles'),
   findOrFail('role'),
   roleController.fetch
 );
