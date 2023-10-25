@@ -66,7 +66,12 @@ router.delete(
   userController.bulkDestroy
 );
 
-router.get('/', isAuth, hasAbilities('admin'), userController.list);
+router.get(
+  '/',
+  isAuth,
+  hasAbilities('admin', 'view-users'),
+  userController.list
+);
 
 router.post(
   '/',
@@ -79,7 +84,7 @@ router.post(
 router.get(
   '/:user',
   isAuth,
-  hasAbilities('admin'),
+  hasAbilities('admin', 'view-users'),
   findOrFail('user'),
   userController.fetch
 );

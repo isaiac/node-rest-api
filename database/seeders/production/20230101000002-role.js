@@ -16,7 +16,7 @@ module.exports = {
         name: 'Admin',
         created_at: date,
         updated_at: date,
-        permissions: ['add-users', 'edit-users', 'delete-users']
+        permissions: ['view-users', 'add-users', 'edit-users', 'delete-users']
       },
       {
         name: 'User',

@@ -45,7 +45,7 @@ describe('Users', () => {
           password_confirmation: 'changeme.123',
           is_active: true,
           roles: ['admin'],
-          permissions: ['add-users', 'edit-users', 'delete-users']
+          permissions: ['view-users', 'add-users', 'edit-users', 'delete-users']
         };
 
         chai
@@ -100,7 +100,12 @@ describe('Users', () => {
             password_confirmation: 'changeme.123',
             is_active: true,
             roles: ['admin'],
-            permissions: ['add-users', 'edit-users', 'delete-users']
+            permissions: [
+              'view-users',
+              'add-users',
+              'edit-users',
+              'delete-users'
+            ]
           };
 
           chai

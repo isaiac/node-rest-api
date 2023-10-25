@@ -12,6 +12,7 @@ module.exports = {
         password: 'changeme.123',
         roles: ['admin'],
         permissions: [
+          'view-users',
           'add-users',
           'edit-users',
           'delete-users',

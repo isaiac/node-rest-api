@@ -5,6 +5,7 @@ const Permission = require('../../../models/permission');
 module.exports = {
   async up() {
     const permissions = [
+      { name: 'View Users' },
       { name: 'Add Users' },
       { name: 'Edit Users' },
       { name: 'Delete Users' },

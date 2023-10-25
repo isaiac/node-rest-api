@@ -8,6 +8,11 @@ module.exports = {
 
     const permissions = [
       {
+        name: 'View Users',
+        created_at: date,
+        updated_at: date
+      },
+      {
         name: 'Add Users',
         created_at: date,
         updated_at: date

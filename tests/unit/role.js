@@ -39,7 +39,7 @@ describe('Roles', () => {
 
         const data = {
           name: 'test',
-          permissions: ['add-users', 'edit-users', 'delete-users']
+          permissions: ['view-users', 'add-users', 'edit-users', 'delete-users']
         };
 
         chai
@@ -89,7 +89,7 @@ describe('Roles', () => {
 
         const data = {
           name: 'test',
-          permissions: ['add-users', 'edit-users', 'delete-users']
+          permissions: ['view-users', 'add-users', 'edit-users', 'delete-users']
         };
 
         chai
