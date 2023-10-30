@@ -4,7 +4,7 @@ const User = require('../../models/user');
 
 const { verify: verifyJwt } = require('../../util/jwt');
 
-const getBearerToken = ({ headers }) => {
+const getAccessToken = ({ headers }) => {
   const matches = [
     ...(headers.authorization ?? '').matchAll(/^Bearer\s(?<token>.*)$/g)
   ][0];
@@ -14,7 +14,7 @@ const getBearerToken = ({ headers }) => {
 
 module.exports = async (req, res, next) => {
   try {
-    const accessToken = getBearerToken(req);
+    const accessToken = getAccessToken(req);
 
     const token = verifyJwt(accessToken);
 
